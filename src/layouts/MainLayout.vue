@@ -12,10 +12,12 @@
         />
 
         <q-toolbar-title>
-          Covid-19 in Thailand
+          {{ $t('title') }}
         </q-toolbar-title>
 
         <!-- <div>Quasar v{{ $q.version }}</div> -->
+        <language-switcher />
+
       </q-toolbar>
     </q-header>
 
@@ -48,6 +50,8 @@
 
 <script lang="ts">
 import EssentialLink from 'components/EssentialLink.vue'
+import { defineComponent, ref } from '@vue/composition-api'
+import LanguageSwitcher from 'components/LanguageSwitcher.vue'
 
 const linksData = [
   {
@@ -58,11 +62,9 @@ const linksData = [
   }
 ]
 
-import { defineComponent, ref } from '@vue/composition-api'
-
 export default defineComponent({
   name: 'MainLayout',
-  components: { EssentialLink },
+  components: { EssentialLink, LanguageSwitcher },
   setup () {
     const leftDrawerOpen = ref(false)
     const essentialLinks = ref(linksData)

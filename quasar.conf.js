@@ -25,7 +25,8 @@ module.exports = configure(function (ctx) {
     // --> boot files are part of "main.js"
     // https://quasar.dev/quasar-cli/boot-files
     boot: [
-      'composition-api'
+      'composition-api',
+      'i18n'
     ],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
@@ -69,6 +70,14 @@ module.exports = configure(function (ctx) {
 
       // https://quasar.dev/quasar-cli/handling-webpack
       extendWebpack (cfg) {
+        cfg.module.rules.push({
+          resourceQuery: /blockType=i18n/,
+          type: 'javascript/auto',
+          use: [
+            { loader: '@kazupon/vue-i18n-loader' },
+            { loader: 'yaml-loader' }
+          ]
+        })
         // linting is slow in TS projects, we execute it only for production builds
         if (ctx.prod) {
           cfg.module.rules.push({

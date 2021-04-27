@@ -3,28 +3,28 @@
     <div class="q-pa-md row items-start justify-evenly q-gutter-md">
       <q-card class="col-12 col-md">
         <q-card-section class="text-right text-white bg-red-5">
-          <div class="text-subtitle2">ผู้ติดเชื้อรวม</div>
+          <div class="text-subtitle2">{{ $t('cases') }}</div>
           <div class="text-h6">{{ summary ? summary.Confirmed.toLocaleString() : null }}</div>
           <div class="text-subtitle2">+ {{ summary ? summary.NewConfirmed.toLocaleString() : null }}</div>
         </q-card-section>
       </q-card>
       <q-card class="col-12 col-md">
         <q-card-section class="text-right text-white bg-green-5">
-          <div class="text-subtitle2">รักษาหายแล้ว</div>
+          <div class="text-subtitle2">{{ $t('recovered') }}</div>
           <div class="text-h6">{{ summary ? summary.Recovered.toLocaleString() : null }}</div>
           <div class="text-subtitle2">+ {{ summary ? summary.NewRecovered.toLocaleString() : null }}</div>
         </q-card-section>
       </q-card>
       <q-card class="col-12 col-md">
         <q-card-section class="text-right text-white bg-orange-5">
-          <div class="text-subtitle2">ผู้ป่วยในโรงพยาบาล</div>
+          <div class="text-subtitle2">{{ $t('hospitalized') }}</div>
           <div class="text-h6">{{ summary ? summary.Hospitalized.toLocaleString() : null }}</div>
           <div class="text-subtitle2">+ {{ summary ? summary.NewHospitalized.toLocaleString() : null }}</div>
         </q-card-section>
       </q-card>
       <q-card class="col-12 col-md">
         <q-card-section class="text-right text-white bg-brown-5">
-          <div class="text-subtitle2">ผู้เสียชีวิต</div>
+          <div class="text-subtitle2">{{ $t('death') }}</div>
           <div class="text-h6">{{ summary ? summary.Deaths.toLocaleString() : null }}</div>
           <div class="text-subtitle2">+ {{ summary ? summary.NewDeaths.toLocaleString() : null }}</div>
         </q-card-section>
