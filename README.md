@@ -1,6 +1,6 @@
-# Covid Web (covid-web)
+# Covid-19 Visualization Website for Thailand
 
-Visualization of covid in Thailand
+Visualization of covid-19 in Thailand
 
 ## Install the dependencies
 ```bash
