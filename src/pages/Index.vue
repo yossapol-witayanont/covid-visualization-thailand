@@ -39,7 +39,7 @@
 <script lang="ts">
 import axios from 'axios'
 import VueApexCharts from 'vue-apexcharts'
-import { Summary, Daily } from 'components/models'
+import { Summary, Daily } from '../components/models'
 import { defineComponent, ref } from '@vue/composition-api'
 
 export default defineComponent({
@@ -80,14 +80,14 @@ export default defineComponent({
   methods: {
     async getSummary () {
       await axios
-        .get('https://covid19.th-stat.com/api/open/today')
-        .then(response => {
+        .get('https://covid19.th-stat.com/json/covid19v2/getTodayCases.json')
+        .then((response) => {
           this.summary = response.data as Summary
         })
     },
     async getDaily () {
       await axios
-        .get('https://covid19.th-stat.com/api/open/timeline')
+        .get('https://covid19.th-stat.com/json/covid19v2/getTimeline.json')
         .then(response => {
           this.daily = response.data as Daily
           if (this.daily) {
