@@ -4,8 +4,10 @@
   "description": "Visualization of covid in Thailand",
   "productName": "Covid Web",
   "author": "Yossapol Witayanont",
+  "homepage": "https://reefwn.github.io/covid19-visualization-web-thailand/",
   "private": true,
   "scripts": {
+    "deploy": "covid19-visualization-web-thailand -d dist",
     "lint": "eslint --ext .js,.ts,.vue ./",
     "test": "echo \"No test specified\" && exit 0"
   },
